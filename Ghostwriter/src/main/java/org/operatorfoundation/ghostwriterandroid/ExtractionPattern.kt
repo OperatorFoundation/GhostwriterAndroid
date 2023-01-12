@@ -7,12 +7,11 @@ class ExtractionPattern(val expression: String, val type: Types) {
 
     fun convert(convertString: String): Detail? {
         return when(this.type) {
-            Types.string -> return Detail(convertString)
-            Types.int -> return Detail(convertString.toInt())
-            Types.uint -> return Detail(convertString.toUInt())
-            Types.float -> return Detail(convertString.toFloat())
-            Types.data -> return Detail(convertString.toByteArray())
-            else -> {return null}
+            Types.string -> Detail(convertString)
+            Types.int -> Detail(convertString.toInt())
+            Types.uint -> Detail(convertString.toUInt())
+            Types.float -> Detail(convertString.toFloat())
+            Types.data -> Detail(convertString.toByteArray())
         }
     }
 
