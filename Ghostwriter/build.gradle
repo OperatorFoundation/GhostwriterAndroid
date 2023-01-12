@@ -11,8 +11,6 @@ publishing {
             groupId = 'org.operatorfoundation'
             artifactId = 'ghostwriterandroid'
             version = '1.0.6'
-
-            from components.java
         }
     }
 }
