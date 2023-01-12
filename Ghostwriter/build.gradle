@@ -4,6 +4,19 @@ plugins {
     id 'maven-publish'
 }
 
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'org.operatorfoundation'
+            artifactId = 'ghostwriterandroid'
+            version = '1.0.6'
+
+            from components.java
+        }
+    }
+}
+
 android {
     namespace 'org.operatorfoundation.ghostwriterandroid'
     compileSdk 32
