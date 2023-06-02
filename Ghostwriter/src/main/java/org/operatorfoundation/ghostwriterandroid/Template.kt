@@ -1,5 +1,8 @@
 package org.operatorfoundation.ghostwriterandroid
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 class Template(val string: String) {
     fun apply(index: Int, detail: Detail): Template? {
         val oldText = "$$index"

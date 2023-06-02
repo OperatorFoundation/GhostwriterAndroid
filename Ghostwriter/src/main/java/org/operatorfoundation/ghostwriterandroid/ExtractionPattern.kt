@@ -1,5 +1,8 @@
 package org.operatorfoundation.ghostwriterandroid
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 class ExtractionPattern(val expression: String, val type: Types) {
     fun extract(extractString: String): String? {
         return extractor(extractString)
