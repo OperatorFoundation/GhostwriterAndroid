@@ -20,7 +20,7 @@ class ExtractionPattern(val expression: String, val type: Types) {
 
     fun extractor(x: String): String? {
         val regex = Regex(pattern = expression)
-        val matches = regex.matchEntire(x)
+        val matches = regex.find(x)
         if (matches == null) {
             return null
         }
