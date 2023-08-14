@@ -41,6 +41,8 @@ fun Parse(template: Template?, patterns: Array<ExtractionPattern>, parseString: 
             }
             if (detail != null) {
                 details.plus(detail)
+            } else {
+                return null
             }
         }
     }
