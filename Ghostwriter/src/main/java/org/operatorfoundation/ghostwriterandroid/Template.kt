@@ -36,8 +36,9 @@ class Template(val string: String) {
             return Triple(null, null, null)
         }
 
-        val templateRest = this.string.substring(templatePreludeIndex..this.string.length)
-        val sourceRest = source.substring(sourcePreludeIndex..source.length)
+        val stringLength = this.string.length
+        val templateRest = this.string.substring(templatePreludeIndex, stringLength)
+        val sourceRest = source.substring(sourcePreludeIndex, source.length)
 
         val result = pattern.extract(sourceRest)
         if (result == null) {
@@ -47,7 +48,7 @@ class Template(val string: String) {
         val convertedDetail = pattern.convert(result)
         val matchIndex = sourceRest.indexOf(result)
         val endMatchIndex = matchIndex + result.length
-        val resultEnd = sourceRest.substring(endMatchIndex..sourceRest.length)
+        val resultEnd = sourceRest.substring(endMatchIndex, sourceRest.length)
 
         return Triple(Template(templateRest), resultEnd, convertedDetail)
     }

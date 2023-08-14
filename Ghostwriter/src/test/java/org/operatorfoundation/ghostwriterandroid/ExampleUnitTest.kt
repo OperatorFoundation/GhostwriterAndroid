@@ -19,4 +19,19 @@ class ExampleUnitTest {
         val result = Generate(template, details)
         assertEquals(correct, result)
     }
+
+    @Test
+    fun testSlice() {
+        val testString = "$1\r\n"
+        val substring = testString.substring(2, 4)
+        println("substring: " + substring)
+        assertEquals(substring, "\r\n")
+    }
+
+    @Test
+    fun testExtract() {
+        val template = Template("$1\r\n")
+        val extractionPattern = ExtractionPattern("250 (STARTTLS)", Types.string)
+        template.extract(1, extractionPattern, "2")
+    }
 }
