@@ -49,6 +49,7 @@ fun Parse(template: Template?, patterns: Array<ExtractionPattern>, parseString: 
 
     if (working != null) {
         if (working.string != source) {
+            println("ghostwriter.Parse() final working string and source do not match")
             return null
         }
     }

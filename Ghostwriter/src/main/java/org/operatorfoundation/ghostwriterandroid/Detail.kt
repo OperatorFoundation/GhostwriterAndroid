@@ -12,6 +12,7 @@ enum class Types {
 
 class Detail(var detail: Any) {
     fun detailString(): String? {
+        println(detail::class.simpleName)
         return when(detail) {
             is String -> detail as String
             is Int -> (detail as Int).toString()
